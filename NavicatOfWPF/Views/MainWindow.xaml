@@ -7,6 +7,50 @@
         xmlns:local="clr-namespace:NavicatOfWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="672" Width="962" FontFamily="./fonts/#iconfont">
+    <Window.Resources>
+        <Style x:Key="RadioButtonStyle" TargetType="{x:Type RadioButton}">
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid>
+                            <Border x:Name="border" CornerRadius="7" Margin="-5" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>
+                            <ContentPresenter x:Name="contentPresenter"  Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="#C0DCF3" TargetName="border"/>
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#C0DCF3" TargetName="border"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -16,8 +60,8 @@
         <Border Background="#F0F0F0" Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <Menu Background="#F0F0F0">
-                <MenuItem Header="文件" VerticalAlignment="Center">
-                    <MenuItem Header="新建链接">
+                    <MenuItem Header="文件" VerticalAlignment="Center">
+                        <MenuItem Header="新建链接">
                             <MenuItem Header="MySQL..."/>
                             <MenuItem Header="PostgreSQL..."/>
                             <MenuItem Header="Oracle..."/>
@@ -25,15 +69,15 @@
                             <MenuItem Header="SQL Server..."/>
                             <MenuItem Header="MariaDB..."/>
                         </MenuItem>
-                    <MenuItem Header="打开链接"/>
-                    <MenuItem Header="关闭链接"/>
-                    <MenuItem Header="导出链接..."/>
-                    <MenuItem Header="导入链接..."/>
-                    <MenuItem Header="Navicat Cloud..."/>
-                    <MenuItem Header="关闭"/>
-                    <MenuItem Header="退出"/>
-                </MenuItem>
-                <MenuItem Header="查看" VerticalAlignment="Center">
+                        <MenuItem Header="打开链接"/>
+                        <MenuItem Header="关闭链接"/>
+                        <MenuItem Header="导出链接..."/>
+                        <MenuItem Header="导入链接..."/>
+                        <MenuItem Header="Navicat Cloud..."/>
+                        <MenuItem Header="关闭"/>
+                        <MenuItem Header="退出"/>
+                    </MenuItem>
+                    <MenuItem Header="查看" VerticalAlignment="Center">
                         <MenuItem Header="列表"/>
                         <MenuItem Header="详细信息"/>
                         <MenuItem Header="ER图表"/>
@@ -73,10 +117,10 @@
                         <MenuItem Header="模型"/>
                         <MenuItem Header="用户"/>
                     </MenuItem>
-                <MenuItem Header="收藏夹" VerticalAlignment="Center">
-                    
-                </MenuItem>
-                <MenuItem Header="工具" VerticalAlignment="Center">
+                    <MenuItem Header="收藏夹" VerticalAlignment="Center">
+
+                    </MenuItem>
+                    <MenuItem Header="工具" VerticalAlignment="Center">
                         <MenuItem Header="数据传输"/>
                         <MenuItem Header="数据同步"/>
                         <MenuItem Header="结构同步"/>
@@ -85,16 +129,16 @@
                         <MenuItem Header="在数据库或模式中查找..."/>
                         <MenuItem Header="历史日志" InputGestureText="Ctrl+H"/>
                         <MenuItem Header="选项..."/>
-                </MenuItem>
-                <MenuItem Header="窗口" VerticalAlignment="Center">
+                    </MenuItem>
+                    <MenuItem Header="窗口" VerticalAlignment="Center">
                         <MenuItem Header="下一个窗口" InputGestureText="Ctrl+Table"/>
-                </MenuItem>
-                <MenuItem Header="帮助" VerticalAlignment="Center">
+                    </MenuItem>
+                    <MenuItem Header="帮助" VerticalAlignment="Center">
                         <MenuItem Header="关于"/>
-                 </MenuItem>
-            </Menu>
-        </StackPanel>
-            
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+
         </Border>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Background="{x:Null}" Foreground="Black" BorderBrush="{x:Null}">
@@ -102,111 +146,111 @@
                     <TextBlock Text="登录"/>
                     <materialDesign:PackIcon Kind="AccountOutline" />
                 </StackPanel>
-                
+
             </Button>
         </StackPanel>
         <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0 0 0 1">
             <StackPanel  Orientation="Horizontal" Background="#F0F0F0">
-            <Menu Background="#F0F0F0" >
-                <MenuItem>
-                    <MenuItem.Header>
-                        <StackPanel>
-                            <TextBlock Text="&#xe698;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
-                            <TextBlock Text="连接" FontFamily="../fonts/#iconfont" FontSize="10"/>
-                        </StackPanel>
-                    </MenuItem.Header>
-                    <MenuItem Header="MySQL"/>
-                    <MenuItem Header="PostgreSQL"/>
-                    <MenuItem Header="Oracle"/>
-                    <MenuItem Header="SQLite"/>
-                    <MenuItem Header="SQL Server"/>
-                    <MenuItem Header="MariaDB"/>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+
+                <Menu Background="#F0F0F0" >
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <TextBlock Text="&#xe698;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
+                                <TextBlock Text="连接" FontFamily="../fonts/#iconfont" FontSize="10"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                        <MenuItem Header="MySQL"/>
+                        <MenuItem Header="PostgreSQL"/>
+                        <MenuItem Header="Oracle"/>
+                        <MenuItem Header="SQLite"/>
+                        <MenuItem Header="SQL Server"/>
+                        <MenuItem Header="MariaDB"/>
+                    </MenuItem>
+
+                </Menu>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe7bd;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="用户" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe637;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="表" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe611;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="视图" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe6fd;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="函数" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe61f;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="事件" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe74f;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="查询" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe619;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="报表" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe678;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="备份" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe648;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="计划" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-                <MenuItem>
-                    <MenuItem.Header>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                    <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe61c;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
                             <TextBlock Text="模型" FontFamily="../fonts/#iconfont" FontSize="10"/>
                         </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-            </Menu>
-            
-            
-        </StackPanel>
+                    </RadioButton.Content>
+                </RadioButton>
+
+            </StackPanel>
         </Border>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -216,10 +260,10 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0"></Grid>
             <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1 0 1 0">
-                
+                <Frame Content="{Binding UsersPage}" NavigationUIVisibility="Hidden"/>
             </Border>
             <Grid Grid.Column="2"></Grid>
         </Grid>
-        
+
     </Grid>
 </Window>

@@ -1,8 +1,8 @@
-﻿using NavicatOfWPF.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NavicatOfWPF
+namespace NavicatOfWPF.Views
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// BeiFenPage.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BeiFenPage : Page
     {
-        public MainWindow()
+        public BeiFenPage()
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel();
         }
-
-       
     }
 }
