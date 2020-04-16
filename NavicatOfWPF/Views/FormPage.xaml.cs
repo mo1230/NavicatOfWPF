@@ -24,5 +24,9 @@ namespace NavicatOfWPF.Views
         {
             InitializeComponent();
         }
+        public void Do()
+        {
+
+        }
     }
 }

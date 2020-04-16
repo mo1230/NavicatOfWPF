@@ -169,7 +169,9 @@
                     </MenuItem>
 
                 </Menu>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0"
+                             Command="{Binding MenuItemCommand}"
+                             CommandParameter="0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe7bd;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -177,7 +179,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="1"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe637;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -185,7 +189,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="2"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe611;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -193,7 +199,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="3"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe6fd;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -201,7 +209,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="4"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe61f;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -209,7 +219,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="5"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe74f;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -217,7 +229,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="6"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe619;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -225,7 +239,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="7"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe678;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -233,7 +249,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="8"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe648;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -241,7 +259,9 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
+                <RadioButton Command="{Binding MenuItemCommand}"
+                             CommandParameter="9"
+                             Style="{DynamicResource RadioButtonStyle}" Width="50" Height="50" Margin="10 0 10 0">
                     <RadioButton.Content>
                         <StackPanel>
                             <TextBlock Text="&#xe61c;" FontFamily="../fonts/#iconfont" FontSize="21" Margin="0 0 0 5"/>
@@ -260,7 +280,7 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0"></Grid>
             <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1 0 1 0">
-                <Frame Content="{Binding UsersPage}" NavigationUIVisibility="Hidden"/>
+                <Frame x:Name="frame" Content="{Binding Pages}" NavigationUIVisibility="Hidden"/>
             </Border>
             <Grid Grid.Column="2"></Grid>
         </Grid>

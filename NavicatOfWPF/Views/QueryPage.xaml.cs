@@ -18,9 +18,9 @@ namespace NavicatOfWPF.Views
     /// <summary>
     /// Query.xaml 的交互逻辑
     /// </summary>
-    public partial class Query : Page
+    public partial class QueryPage : Page
     {
-        public Query()
+        public QueryPage()
         {
             InitializeComponent();
         }

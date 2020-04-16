@@ -8,7 +8,56 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PlanPage">
 
+    <Page.Resources>
+        <Style x:Key="ButtonOfPageStyle" TargetType="{x:Type Button}">
+            <Style.Setters>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Name="border" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                                    BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="5">
+                                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#C0DCF3"  TargetName="border"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+
+        </Style>
+    </Page.Resources>
+
     <Grid>
-        
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="#F0F0F0">
+            <Button Style="{DynamicResource ButtonOfPageStyle}">
+                <TextBlock Text="设计批处理作业"/>
+            </Button>
+
+            <Button Style="{DynamicResource ButtonOfPageStyle}">
+                <TextBlock Text="新建批处理作业"/>
+            </Button>
+
+            <Button Style="{DynamicResource ButtonOfPageStyle}">
+                <TextBlock Text="删除批处理作业"/>
+            </Button>
+
+            <Button Style="{DynamicResource ButtonOfPageStyle}">
+                <TextBlock Text="设置计划任务"/>
+            </Button>
+        </StackPanel>
+
     </Grid>
 </Page>

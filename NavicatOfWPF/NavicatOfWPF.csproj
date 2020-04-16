@@ -102,11 +102,12 @@
     <Compile Include="Views\ModelPage.xaml.cs">
       <DependentUpon>ModelPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PagesManage.cs" />
     <Compile Include="Views\PlanPage.xaml.cs">
       <DependentUpon>PlanPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Query.xaml.cs">
-      <DependentUpon>Query.xaml</DependentUpon>
+    <Compile Include="Views\QueryPage.xaml.cs">
+      <DependentUpon>QueryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UsersPage.xaml.cs">
       <DependentUpon>UsersPage.xaml</DependentUpon>
@@ -154,7 +155,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Query.xaml">
+    <Page Include="Views\QueryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
