@@ -82,6 +82,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Db\DbClient.cs" />
+    <Compile Include="Db\DbConfig.cs" />
+    <Compile Include="Db\DbMySQL.cs" />
     <Compile Include="Interfaces\IUserFunction.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="Views\BaoBiaoPage.xaml.cs">
