@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NavicatOfWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,8 @@ namespace NavicatOfWPF.Views
         public FormPage()
         {
             InitializeComponent();
+            this.DataContext = new FormPageViewModel();
         }
-        public void Do()
-        {
-
-        }
+        
     }
 }

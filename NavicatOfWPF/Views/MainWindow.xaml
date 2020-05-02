@@ -160,7 +160,7 @@
                                 <TextBlock Text="连接" FontFamily="../fonts/#iconfont" FontSize="10"/>
                             </StackPanel>
                         </MenuItem.Header>
-                        <MenuItem Header="MySQL"/>
+                        <MenuItem Header="MySQL" Command="{Binding MysqlCommand}"/>
                         <MenuItem Header="PostgreSQL"/>
                         <MenuItem Header="Oracle"/>
                         <MenuItem Header="SQLite"/>
@@ -278,7 +278,16 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0"></Grid>
+            <Grid Grid.Column="0">
+                <Expander>
+                    <Expander.Header >
+                        <TextBlock Text="{Binding}"/>
+                    </Expander.Header>
+                    <Expander.Content>
+                        <TextBlock Text="{Binding}" Margin="50 0 0 0"/>
+                    </Expander.Content>
+                </Expander>
+            </Grid>
             <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1 0 1 0">
                 <Frame x:Name="frame" Content="{Binding Pages}" NavigationUIVisibility="Hidden"/>
             </Border>

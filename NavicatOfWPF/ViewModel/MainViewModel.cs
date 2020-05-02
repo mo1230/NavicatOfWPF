@@ -1,6 +1,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NavicatOfWPF.Views;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace NavicatOfWPF.ViewModel
@@ -9,12 +10,14 @@ namespace NavicatOfWPF.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private PagesManage pagesManage;
+        private string dbName;
         private Page pages;
-        public MainViewModel()
+        private Window window; 
+        public MainViewModel(object obj)
         {
             this.pagesManage = new PagesManage();
             this.pages = new FormPage();
-            
+            this.window = obj as Window;
             
         }
 
@@ -29,6 +32,34 @@ namespace NavicatOfWPF.ViewModel
                 pages = value;
                 RaisePropertyChanged("Pages");
             }
+        }
+
+        public string DbName
+        {
+            get
+            {
+                return dbName;
+            }
+            set 
+            {
+                dbName = value;
+                RaisePropertyChanged("DbName");
+            }
+        }
+
+        public RelayCommand MysqlCommand
+        {
+            get
+            {
+                return new RelayCommand(() =>
+                {
+                    var mysql = new MysqlConnectionWindow();
+                    mysql.Show();
+                    mysql.Owner = this.window;
+                    
+                });
+            }
+
         }
 
         public RelayCommand<string> MenuItemCommand

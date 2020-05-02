@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NavicatOfWPF.Db
 {
+    /// <summary>
+    /// 数据库配置
+    /// </summary>
     class DbConfig
     {
         private string server;
